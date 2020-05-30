@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      博客心得 | scl
+      Hexo上传至Github | scl
     
   </title>
   <meta name="author" content="ccit18081430212">
@@ -89,7 +89,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「博客心得」
+			「Hexo上传至Github」
 		
 	</p>
 
@@ -220,14 +220,27 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
 	 
 
 <div class="layout-post">
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" itemprop="url">
-		博客心得
+	<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" itemprop="url">
+		Hexo上传至Github
 	</a>
 
 		</div>
@@ -243,9 +256,9 @@
 
 	更新于
 
-	<a href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" itemprop="url">
-		<time datetime="2020-05-27T11:28:43.062Z" itemprop="dateUpdated">
-	  		2020-05-27
+	<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" itemprop="url">
+		<time datetime="2020-05-23T12:05:08.000Z" itemprop="dateUpdated">
+	  		2020-05-30
 	  </time>
 	</a> 
 
@@ -253,13 +266,20 @@
 
 			</span>
 			<span>
-						
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Hexo/" class=" ">
+			Hexo
+		</a>
+	
+		
 			</span>
 			
 			
 
 	
-    <span class="leancloud_visitors" id="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/_visitors" data-url="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" data-title="博客心得">
+    <span class="leancloud_visitors" id="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/_visitors" data-url="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" data-title="Hexo上传至Github">
        	<i class="icon-eye"></i>
        	热度
         
@@ -271,7 +291,7 @@
 
 
 	
-    <span class="leancloud_likes" id="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/_likes" data-url="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" data-title="博客心得" rel="unlike">
+    <span class="leancloud_likes" id="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/_likes" data-url="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" data-title="Hexo上传至Github" rel="unlike">
         <i class="icon-heart"></i>
         喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -281,8 +301,24 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<hr>
-<p>title: 博客<br>date: 2020-05-27 19:28:43<br>tags:<br>—Hexo（官方网站）是一个快速、简洁且高效的博客框架，使用 Markdown 解析文章，在几秒内，即可利用靓丽的主题生成静态网页，并且它拥有非常丰富的主题模板和插件，最重要的是，Hexo 可以部署到 Github 等代码托管平台上，加上这些平台提供的免费 Page 服务，不用花一分钱就可以拥有一个好看易用的个人博客，何乐而不为呢！</p>
+			<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>我们要将自己的博客上传至Github,首先我们需要将去注册我们GIithub账户。</p>
+<ol>
+<li><a href="https://github.com/" target="_blank" rel="noopener">注册Github</a>：右上角的<code>sign in</code>是登录，<code>sign up</code>是注册。</li>
+<li><strong>新建仓库(Repository)</strong>:点击<code>create repository</code>按钮。</li>
+<li>查看仓库配置：点击仓库右上角的<code>Settings</code>选项。</li>
+<li>获取本机当前用户的SSH公钥：首先查看在本机的当前用户(操作系统的登录账户)目录下是否已经存在ssh公钥。<code>~</code>表示当前用户的家目录。</li>
+</ol>
+<p><strong>SSH公钥是是将Hexo关键所在，<a href="https://www.bilibili.com/video/BV1cW411A7Jx?p=4" target="_blank" rel="noopener">Github SSH公钥具体配置方法</a></strong></p>
+<h1 id="绑定Hexo和Github"><a href="#绑定Hexo和Github" class="headerlink" title="绑定Hexo和Github"></a>绑定Hexo和Github</h1><p><strong>1.修改本地站点配置文件</strong>: 打开站点目录（<code>blog\</code>）下的<code>_config.yml</code>文件，将最后一部分修改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:  </span><br><span class="line">          type:  git</span><br><span class="line">          repo:  git@github.com:username&#x2F;username.github.io.git</span><br><span class="line">          branch:  master</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.安装关联hexo和git的工具</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure>
+
+<p>如果最后可以看到这个工具的版本号，则表明安装成功。</p>
+<h1 id="Hexo升天"><a href="#Hexo升天" class="headerlink" title="Hexo升天"></a>Hexo升天</h1><p><strong>部署Hexo</strong>：执行以下命令:hexo d</p>
+<p>这个命令会将本地博客根目录（<code>blog\</code>）下<code>public</code>文件夹里的所有文件上传至Github上的<code>username/username.github.io.git</code>这个仓库。</p>
+<p><strong>2.博客预览</strong>：在浏览器中输入<code>https://username.github.io</code>,如果看到新页面则大功告成.</p>
 	
 		</div>
 		
@@ -301,8 +337,12 @@
 	<span>
 		<a id="totop-post-page">返回顶部</a>
 		
+			<a href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="博客心得" rel="prev">
+				&laquo;上一篇
+			</a>
 		
-			<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github" rel="next">
+		
+			<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -320,31 +360,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github">
-								Hexo上传至Github			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 23日, 2020				
-							</p>
-							<p class="relate-post-content">
-								准备工作我们要将自己的博客上传至Github,首先我们需要将去注册我们GIithub账户。
-
-注册Github：右上角的sign in是登录，sign up是注册。
-新建仓库(Repository):点击create reposito...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo上传至Github"/>
-							</a>
-						</div>
-					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -389,6 +404,29 @@
 							<a href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" title="Hexo本地搭建">				
 								
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo本地搭建"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="博客心得">
+								博客心得			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 27日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+title: 博客date: 2020-05-27 19:28:43tags:—Hexo（官方网站）是一个快速、简洁且高效的博客框架，使用 Markdown 解析文章，在几秒内，即可利用靓丽的主题生成静态网页，并且它拥有非常丰富的主...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="博客心得">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="博客心得"/>
 							</a>
 						</div>
 					</li>												

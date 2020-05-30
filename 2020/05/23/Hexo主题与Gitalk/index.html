@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      博客心得 | scl
+      Hexo主题与Gitalk | scl
     
   </title>
   <meta name="author" content="ccit18081430212">
@@ -89,7 +89,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「博客心得」
+			「Hexo主题与Gitalk」
 		
 	</p>
 
@@ -220,14 +220,27 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
 	 
 
 <div class="layout-post">
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" itemprop="url">
-		博客心得
+	<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" itemprop="url">
+		Hexo主题与Gitalk
 	</a>
 
 		</div>
@@ -243,9 +256,9 @@
 
 	更新于
 
-	<a href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" itemprop="url">
-		<time datetime="2020-05-27T11:28:43.062Z" itemprop="dateUpdated">
-	  		2020-05-27
+	<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" itemprop="url">
+		<time datetime="2020-05-23T12:05:08.000Z" itemprop="dateUpdated">
+	  		2020-05-30
 	  </time>
 	</a> 
 
@@ -253,13 +266,20 @@
 
 			</span>
 			<span>
-						
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Hexo/" class=" ">
+			Hexo
+		</a>
+	
+		
 			</span>
 			
 			
 
 	
-    <span class="leancloud_visitors" id="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/_visitors" data-url="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" data-title="博客心得">
+    <span class="leancloud_visitors" id="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/_visitors" data-url="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" data-title="Hexo主题与Gitalk">
        	<i class="icon-eye"></i>
        	热度
         
@@ -271,7 +291,7 @@
 
 
 	
-    <span class="leancloud_likes" id="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/_likes" data-url="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" data-title="博客心得" rel="unlike">
+    <span class="leancloud_likes" id="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/_likes" data-url="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" data-title="Hexo主题与Gitalk" rel="unlike">
         <i class="icon-heart"></i>
         喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -281,8 +301,31 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<hr>
-<p>title: 博客<br>date: 2020-05-27 19:28:43<br>tags:<br>—Hexo（官方网站）是一个快速、简洁且高效的博客框架，使用 Markdown 解析文章，在几秒内，即可利用靓丽的主题生成静态网页，并且它拥有非常丰富的主题模板和插件，最重要的是，Hexo 可以部署到 Github 等代码托管平台上，加上这些平台提供的免费 Page 服务，不用花一分钱就可以拥有一个好看易用的个人博客，何乐而不为呢！</p>
+			<h1 id="Hexo主题配置"><a href="#Hexo主题配置" class="headerlink" title="Hexo主题配置"></a>Hexo主题配置</h1><p>一、我们现在的博客是初始化的主题，所以我们要给Hexo换上新装。Hexo主题在官网有很多，大家可以登录查看<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官网链接</a>。</p>
+<p>有自己中意的主题以后，前往作者的Github,点击：“clone or download”，把文件夹下载到自己所创建的博客“<strong>themes</strong>”文件中。</p>
+<p><img src="https://raw.githubusercontent.com/SCX-MI/tu-BED/master/20200524115430.jpg" alt="6"></p>
+<p>二、进入自己所创建的博客文件夹中，找到“_config.yml“文件，在这里我推荐大家<strong>“Typora”</strong>软件打开这个文件，以及后期的博文，我都推荐大家使用<strong>“Tpyora”</strong>。</p>
+<p>利用查找功能找到：Themes的主题配置。将主题Themes改成：自己所下载的主题名称。</p>
+<p><img src="https://raw.githubusercontent.com/SCX-MI/tu-BED/master/20200524115452.jpg" alt="7"></p>
+<h1 id="Gitalk开启评论功能"><a href="#Gitalk开启评论功能" class="headerlink" title="Gitalk开启评论功能"></a>Gitalk开启评论功能</h1><p>一、新建仓库</p>
+<p>点击<strong><em>你的用户名\</em></strong>，定位到github用户主页，新建一个仓库</p>
+<p><img src="https://raw.githubusercontent.com/SCX-MI/tu-BED/master/20200524114317.png" alt="1"></p>
+<p>点击<strong><em>New\</em></strong>之后，你应该看到</p>
+<p><img src="https://raw.githubusercontent.com/SCX-MI/tu-BED/master/20200524114431.png" alt="4"></p>
+<p>二、注册应用</p>
+<p>Gitalk评论插件的授权机制依赖于<code>OAuth Application</code>，故使用Gitalk之前注册新应用。<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">注册链接</a></p>
+<ul>
+<li>点击<strong><em>注册链接\</em></strong>之后，你应该看到</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/SCX-MI/tu-BED/master/20200524114330.png" alt="2"></p>
+<p>点击<strong><em>Register application\</em></strong>之后，你应该看到</p>
+<p><img src="https://raw.githubusercontent.com/SCX-MI/tu-BED/master/20200524114346.png" alt="3"></p>
+<p>请复制、保留<code>Client ID</code>和<code>Client Secret</code>的值（相应字段下方的字符串。<del>此处Teach-ple应用我已删除</del>）</p>
+<p>三、主题配置</p>
+<p>现在，请打开主题目录下的<code>_config.yml</code>文件，配置Gitalk评论插件的参数</p>
+<p>四、本地测试</p>
+<p>hexo g<br>hexo s</p>
+<p><code>hexo s</code>本地测试以检查参数是否设置错误，<code>hexo d</code>部署以正常使用。（第一次使用，请登陆初始化）</p>
 	
 		</div>
 		
@@ -301,8 +344,12 @@
 	<span>
 		<a id="totop-post-page">返回顶部</a>
 		
+			<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github" rel="prev">
+				&laquo;上一篇
+			</a>
 		
-			<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github" rel="next">
+		
+			<a href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" title="Hexo本地搭建" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -348,29 +395,6 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">
-								Hexo主题与Gitalk			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 23日, 2020				
-							</p>
-							<p class="relate-post-content">
-								Hexo主题配置一、我们现在的博客是初始化的主题，所以我们要给Hexo换上新装。Hexo主题在官网有很多，大家可以登录查看官网链接。
-有自己中意的主题以后，前往作者的Github,点击：“clone or download”，把文件夹...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo主题与Gitalk"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
 							<a class="relate-post-title" href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" title="Hexo本地搭建">
 								Hexo本地搭建			
 							</a>
@@ -389,6 +413,29 @@
 							<a href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" title="Hexo本地搭建">				
 								
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo本地搭建"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="博客心得">
+								博客心得			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 27日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+title: 博客date: 2020-05-27 19:28:43tags:—Hexo（官方网站）是一个快速、简洁且高效的博客框架，使用 Markdown 解析文章，在几秒内，即可利用靓丽的主题生成静态网页，并且它拥有非常丰富的主...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="博客心得">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="博客心得"/>
 							</a>
 						</div>
 					</li>												
