@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hexo本地搭建</title>
+      <link href="/2020/05/27/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/"/>
+      <url>/2020/05/27/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<hr><p>title: Hexo本地搭建<br>date: 2020-05-27 19:47:15<br>tags:<br>—Hexo本地搭建<br> 更新于 2020-05-23   Hexo   热度 1   喜欢 0<br>本博主第一篇文章，主要介绍：为何使用hexo。如何进行hexo本地的搭建以及遇到的问题，解决方案。</p><p>为何使用Hexo<br>目前网络有形形色色的博客，我们在这些平台的注册博客，发表文章，如果后来平台消失，我们发表的宝贵文章，也随之消失。</p><p>我也将会在hexo 中记录自己学习心得，作为自己的“北大荒”。</p><p>Hexo本地搭建<br>环境的搭建<br>事物的运行都需要一个环境，所以要想让hexo运行就需要为其搭建一个环境。</p><p>Node.js,和Git是hexo环境搭建的主要的软件。</p><p>一、安装Node.js去官网选择最新的版本，安装完成后在CMD指令窗口输入指令：”node -v“。</p><p>等待电脑给出 Node 的版本号，如若给出则安装成功。</p><p>二、安装Git</p><p>安装 Git,完成后在CMD窗口输入“Git”指令。</p><p>如若出现上图，则表示Git安装成功。</p><p>Hexo安装<br>环境搭建完成后，我们就要进行Hexo的安装。</p><p>在CMD窗口输入“npm install hexo-cli -g”。进行安装。</p><p>安装完成后如果可以看到hexo-cli的版本号，则表示安装成功。</p><p>上图可以看到Hexo的版本号，代表已经安装成功。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>博客心得</title>
+      <link href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/"/>
+      <url>/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/</url>
+      
+        <content type="html"><![CDATA[<hr><p>title: 博客<br>date: 2020-05-27 19:28:43<br>tags:<br>—Hexo（官方网站）是一个快速、简洁且高效的博客框架，使用 Markdown 解析文章，在几秒内，即可利用靓丽的主题生成静态网页，并且它拥有非常丰富的主题模板和插件，最重要的是，Hexo 可以部署到 Github 等代码托管平台上，加上这些平台提供的免费 Page 服务，不用花一分钱就可以拥有一个好看易用的个人博客，何乐而不为呢！</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2020/03/15/hello-world/"/>
+      <url>/2020/03/15/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="hello"><a href="#hello" class="headerlink" title="hello"></a>hello</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
