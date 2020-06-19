@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      设备连接 | scl
+      服务特性 | scl
     
   </title>
   <meta name="author" content="ccit18081430212">
@@ -89,7 +89,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「设备连接」
+			「服务特性」
 		
 	</p>
 
@@ -239,8 +239,8 @@
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2020/06/16/title/" itemprop="url">
-		设备连接
+	<a href="/2020/06/19/title-1/" itemprop="url">
+		服务特性
 	</a>
 
 		</div>
@@ -256,9 +256,9 @@
 
 	更新于
 
-	<a href="/2020/06/16/title/" itemprop="url">
-		<time datetime="2020-06-16T09:24:35.000Z" itemprop="dateUpdated">
-	  		2020-06-16
+	<a href="/2020/06/19/title-1/" itemprop="url">
+		<time datetime="2020-06-19T02:47:54.000Z" itemprop="dateUpdated">
+	  		2020-06-19
 	  </time>
 	</a> 
 
@@ -269,8 +269,8 @@
 				
 	<i class="icon-price-tags"></i>
 	
-		<a href="/tags/%E5%BC%80%E5%8F%91%E6%9D%BF%E4%BB%8B%E7%BB%8D/" class=" ">
-			开发板介绍
+		<a href="/tags/BBC%E5%BC%80%E5%8F%91%E6%9D%BF/" class=" ">
+			BBC开发板
 		</a>
 	
 		
@@ -279,7 +279,7 @@
 			
 
 	
-    <span class="leancloud_visitors" id="/2020/06/16/title/_visitors" data-url="/2020/06/16/title/" data-title="设备连接">
+    <span class="leancloud_visitors" id="/2020/06/19/title-1/_visitors" data-url="/2020/06/19/title-1/" data-title="服务特性">
        	<i class="icon-eye"></i>
        	热度
         
@@ -291,7 +291,7 @@
 
 
 	
-    <span class="leancloud_likes" id="/2020/06/16/title/_likes" data-url="/2020/06/16/title/" data-title="设备连接" rel="unlike">
+    <span class="leancloud_likes" id="/2020/06/19/title-1/_likes" data-url="/2020/06/19/title-1/" data-title="服务特性" rel="unlike">
         <i class="icon-heart"></i>
         喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -301,27 +301,256 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<h1 id="设备连接"><a href="#设备连接" class="headerlink" title="设备连接"></a>设备连接</h1><p>Micro:bit是由英国BBC公司推出的一款手持式可编程的微型计算机，可用于各种很新潮的创新，从机器人到乐器 – 无止尽，从小学到大学，非常容易开始，拥有无限可能性！一块BBC小板子上有温度传感器和光线传感器，运动传感器（加速度和指南针），2个可编程按钮，25颗独立可编程的LED，无线通讯，通过无线电和蓝牙等常用设备，无需安装任何软件， 你可以通过任意一个网页浏览器在 Blocks、 Javascript、Python、Scratch等编辑器上编写代码。费用比绝大多数玩具低——值得你入坑。</p>
-<p>在这里简绍连接Micro:bit蓝牙设备的两种方法。</p>
-<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>本机使用windows 10系统，进行操作。</p>
-<h5 id="step2：下载固件到开发板"><a href="#step2：下载固件到开发板" class="headerlink" title="step2：下载固件到开发板"></a>step2：下载固件到开发板</h5><p>如果microbit开发板想和我们的电脑通过蓝牙进行无线通信，我们就需要启动板子的蓝牙设备功能，因此要下载固件到开发板中进行激活。 <a href="https://makecode.microbit.org/v0/89975-20684-84568-20127" target="_blank" rel="noopener">https://makecode.microbit.org/v0/89975-20684-84568-20127</a> 打开上面链接下载固件，然后用USB线连接开发板和电脑，将下载的固件移到开发板对应的MINCROBIT（G)盘中，这个时候会发现板子上黄色小灯不停闪烁，这说明在下载中，然后板子中LED小灯会显出Hi！,这就说明下载成功。</p>
-<p><img src="/ccit18081430212/06.16.13.jpg" alt=""></p>
-<h5 id="step3：使用谷歌浏览器工具"><a href="#step3：使用谷歌浏览器工具" class="headerlink" title="step3：使用谷歌浏览器工具"></a>step3：使用谷歌浏览器工具</h5><p>打开Chrome浏览器输入以下网址：chrome://bluetooth-internals/#adapter 找到对应的板子蓝牙（BBC micro:bit）进行连接。</p>
-<p><img src="/ccit18081430212/06.16.4.png" alt=""></p>
-<p>然后点击inspect,就会出现</p>
-<p><img src="/ccit18081430212/06.16.5.png" alt=""></p>
-<p>板子出现以上结果显示C表示设备连接成功。</p>
-<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><p>在方法一中step1和step2的基础上，进行程序编写，也可实现BBC micro:bit蓝牙设备连接，在这里编辑器我用的是Adobe Dreamweaver和Notepad++，这两个软件都可下载安装。程序内容如下：</p>
-<p><img src="/ccit18081430212/06.16.6.png" alt=""></p>
-<p><img src="/ccit18081430212/06.16.7.png" alt=""></p>
-<p><img src="/ccit18081430212/06.161.png" alt=""></p>
-<p>程序编写使用Html和JavaScript，文件格式是.html然后用浏览器本地打开即可。</p>
-<p><img src="/ccit18081430212/06.16.9.png" alt=""></p>
-<p><img src="/ccit18081430212/06.16.10.png" alt=""></p>
-<p><img src="/ccit18081430212/06.16.11.png" alt=""></p>
-<p><img src="/ccit18081430212/06.16.14.png" alt=""></p>
-<p> 这样及连接成功。现象也是在开发板上显示C</p>
-<p><img src="/ccit18081430212/06.16.13.jpg" alt=""></p>
+			<h3 id="Step1-发现服务和特性"><a href="#Step1-发现服务和特性" class="headerlink" title="Step1:发现服务和特性"></a>Step1:发现服务和特性</h3><p>1.大家在我的 BBC MicroBit蓝牙设备系列（一）中从<a href="https://makecode.microbit.org/v0/89975-20684-84568-20127" target="_blank" rel="noopener">https://makecode.microbit.org/v0/89975-20684-84568-20127</a> 下载固件到BBC Micro:bit开发板时，会发现，我们的这个BBC MicroBit开发板板服务在程序设计时已经包含了蓝牙加速计服务和蓝牙led服务。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5C06.18.2.png" alt=""></p>
+<p>2.大家可以打开Chrome自带的蓝牙工具chrome://bluetooth-internals/#adapter进行蓝牙连接，怎样连接在系列（一）可自行观看，连接成功后通过开发商提供的资料链接<a href="https://lancaster-university.github.io/microbit-docs/resources/bluetooth/bluetooth_profile.html" target="_blank" rel="noopener">https://lancaster-university.github.io/microbit-docs/resources/bluetooth/bluetooth_profile.html</a> ，这里都是关于开发板的服务和特性的UUID号，每个服务都对应的UUID号，连接成功后，我们可以看到，当相对应的服务UUID号一致则说明你的服务已添加成功。</p>
+<p><img src="" alt="">)<img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5C06.18.3.png" alt="06.18.3"></p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5C06.18.4.png" alt=""></p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5C06.18.6.png" alt=""></p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5C06.18.7.png" alt=""></p>
+<h3 id="Step2：如何给BBC-Microbit开发板添加服务"><a href="#Step2：如何给BBC-Microbit开发板添加服务" class="headerlink" title="Step2：如何给BBC Microbit开发板添加服务"></a>Step2：如何给BBC Microbit开发板添加服务</h3><p>1.在蓝牙连接的状态下，打开<a href="https://makecode.microbit.org/v0/89975-20684-84568-20127" target="_blank" rel="noopener">https://makecode.microbit.org/v0/89975-20684-84568-20127</a> 进行在线源码编辑：</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5C06.19.1.png" alt=""></p>
+<p>搜索蓝牙，相应的蓝牙服务就出来了，这里添加的是蓝牙温度服务将方块拖到图片的位置</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5C06.19.2.png" alt=""></p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5C06.19.3.png" alt=""></p>
+<p>然后保存，下载。</p>
+<p>2.在你的此电脑&gt;下载路径下就有你下载的.hex文件，将下载的固件.hex文件移到开发板对应的MINCROBIT（G)盘中，这个时候打开Chrome自带的蓝牙工具，进行连接，连接成功后会发现服务已被添加成功。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200619110456.png" alt=""></p>
+<h3 id="Step3：修改电脑端源码增加温度服务、特性"><a href="#Step3：修改电脑端源码增加温度服务、特性" class="headerlink" title="Step3：修改电脑端源码增加温度服务、特性"></a>Step3：修改电脑端源码增加温度服务、特性</h3><html>
+    <head>   <!-- 用于定义文档的头部，描述了文档的各种属性和信息。<head> 中的元素可以引用脚本、指示浏览器在哪里找到样式表、提供元信息等等。 -->
+        <script>
+        var    selected_device;    // 保存用户选择的蓝牙设备 
+        var    connected_server;    // 在第2课基础上添加的变量,保存用户连接的蓝牙设备 
+        var    connected = false;     // 在第3课基础上添加的变量,保存电脑蓝牙的当前连接状态
+        var    services_discovered = false;  //在第5课上添加
+        //在第5课上添加以下内容
+        // presence of services and characteristics 
+        var has_accelerometer_service = false; 
+        var has_accelerometer_data = false; 
+        var has_led_service = false;
+        var has_led_matrix_state = false; 
+        var has_device_information_service = false; 
+        var has_model_name_string = false; 
+
+<pre><code>   // service UUIDs 
+   ACCELEROMETER_SERVICE = &apos;e95d0753-251d-470a-a062-fa1922dfa9a8&apos;; 
+   LED_SERVICE = &apos;e95dd91d-251d-470a-a062-fa1922dfa9a8&apos;; 
+   DEVICE_INFORMATION_SERVICE = &apos;0000180a-0000-1000-8000-00805f9b34fb&apos;;
+   // characteristic UUIDs 
+   ACCELEROMETER_DATA = &apos;e95dca4b-251d-470a-a062-fa1922dfa9a8&apos;; 
+   LED_MATRIX_STATE  = &apos;e95d7b77-251d-470a-a062-fa1922dfa9a8&apos;; 
+   MODEL_NUMBER_STRING = &apos;00002a24-0000-1000-8000-00805f9b34fb&apos;; 
+
+   // cached characteristics 
+    var led_matrix_state; 
+    var model_number_string;
+    var accelerometer_data; 
+
+     //
+     var service_count;
+     var services_discovered;
+     var characteristics_discovered;  
+     var characteristic_count ; 
+    function discoverOrdisconnectDevices()  // 在第4课基础上添加的函数
+    {
+        console.log(&quot;discoverDevicesOrDisconnect&quot;); 
+        if (!connected)
+            discoverDevices();
+        else
+        {
+            selected_device.gatt.disconnect();
+        }
+
+    }
+
+    function onDisconnected()           // 在第4课基础上添加的函数
+    {  
+         console.log(&quot;onDisconnected&quot;);  
+         resetUI(); 
+    }
+    function discoverDevices()
+    {
+        console.log(&quot;discoverDevices&quot;);             //console.log：控制台打印输出
+        var options = {acceptAllDevices:true,
+            optionalServices: [DEVICE_INFORMATION_SERVICE, ACCELEROMETER_SERVICE, LED_SERVICE]  //在第5节课上添加
+        }        //发现所有周边蓝牙设备
+        navigator.bluetooth.requestDevice(options)   //Navigator对象：包含有关浏览器的信息。
+        .then(device =&gt; {
+            console.log(&apos;&gt; Name:&apos; + device.name);
+            console.log(&apos;&gt; Id:&apos;   + device.id);
+            console.log(&apos;&gt; Connected:&apos; + device.gatt.connected);
+            selected_device = device;
+            console.log(selected_device);
+            connect();                              //在第2课基础上添加的函数
+        })
+        .catch(error =&gt; {
+            alert(&apos;ERROR:&apos; +error);
+            console.log(&apos;ERROR:&apos; + error);
+            });
+    }
+
+    function connect()                             //在第2课基础上添加的函数
+    {
+        console.log(&quot;connecting&quot;);
+        selected_device.gatt.connect()
+        .then(
+            function (server)        //表示连接成功
+            {
+                console.log(&quot;Connected to&quot; + server.device.id);
+                console.log(&quot;Connected=&quot; + server.connected);
+                selected_device.addEventListener( &apos;gattserverdisconnected&apos;,onDisconnected);  // 在第4课基础上添加的函数
+
+                connected_server = server;
+                discoverSvcsAndChars();    ////在第5课基础上添加的函数
+                setConnectedStatus(true);   // 在第3课基础上添加的函数,设置电脑蓝牙的当前连接状态
+
+            },
+            function (error)        //表示连接失败
+            {
+                console.log(&quot;ERROR:could not connct-&quot; + error);
+                alert(&quot;ERROR:could not connct-&quot; + error);
+                setConnectedStatus(false);  // 在第3课基础上添加的函数,设置电脑蓝牙的当前连接状态
+
+            }
+        );
+    }
+
+    function setConnectedStatus(status)  // 在第3课基础上添加的函数,设置电脑蓝牙的当前连接状态
+    {
+        connected = status;
+        document.getElementById(&apos;status_connected&apos;).innerHTML = status;
+        if (status == true) 
+        {   
+            document.getElementById(&apos;btn_scan&apos;).innerHTML = &quot;Disconnect&quot;; 
+        } 
+        else 
+        {   
+            document.getElementById(&apos;btn_scan&apos;).innerHTML = &quot;Discover Devices&quot;;  
+        }
+    }
+
+    function setDiscoveryStatus(status)
+     {  
+         services_discovered = status; 
+         document.getElementById(&apos;status_discovered&apos;).innerHTML = status;
+     }
+
+    function resetUI()      // 在第4课基础上添加的函数
+    {
+        setConnectedStatus(false);
+        setDiscoveryStatus(false);    // 在第5课基础上添加的函数
+    }
+
+    function discoverSvcsAndChars()    //在第5课基础上添加的函数
+    {  
+        console.log(&quot;discoverSvcsAndChars server=&quot; + connected_server); 
+        connected_server.getPrimaryServices()
+        .then(services =&gt; 
+        {    
+                has_accelerometer_service = false;    
+                has_led_service = false;    
+                has_device_information_service = false; 
+
+                services_discovered = 0;    
+                service_count = services.length;    
+                console.log(&quot;Got &quot; + service_count + &quot; services&quot;); 
+
+                services.forEach(service =&gt; 
+                {     
+                    if (service.uuid == ACCELEROMETER_SERVICE)
+                    {      
+                        has_accelerometer_service = true;    
+                    }     
+                    if (service.uuid == LED_SERVICE) 
+                    {      
+                        has_led_service = true;     
+                    }     
+                    if (service.uuid == DEVICE_INFORMATION_SERVICE) 
+                    {      
+                        has_device_information_service = true;     
+                    }     
+                    console.log(&apos;Getting Characteristics for service &apos; + service.uuid);     
+                    service.getCharacteristics()
+                    .then(characteristics =&gt; 
+                    {      
+                        console.log(&apos;&gt; Service: &apos; + service.uuid);      
+                        services_discovered++;     
+                        characteristics_discovered = 0;      
+                        characteristic_count = characteristics.length;      
+                        characteristics.forEach(characteristic =&gt; 
+                        {       
+                            characteristics_discovered++;       
+                            console.log(&apos;&gt;&gt; Characteristic: &apos; + characteristic.uuid);       
+                            if (characteristic.uuid == ACCELEROMETER_DATA)
+                            {        
+                                accelerometer_data = characteristic;        
+                                has_accelerometer_data = true;       
+                            }       
+                            if (characteristic.uuid == LED_MATRIX_STATE) 
+                            {        
+                                led_matrix_state = characteristic;        
+                                has_led_matrix_state = true;       
+                            }       
+                            if (characteristic.uuid == MODEL_NUMBER_STRING) 
+                            {        
+                                model_number_string = characteristic;        
+                                has_model_name_string = true;       
+                            }       
+                            if (services_discovered == service_count &amp;&amp; characteristics_discovered == characteristic_count) 
+                            {        
+                                console.log(&quot;FINISHED DISCOVERY&quot;); 
+                                setDiscoveryStatus(true);       
+                                //setDiscoveryStatus(true);                  
+                            }      
+                        });     
+                    });    
+                });  
+        });
+    }
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;
+        Status    &lt;!-- 显示蓝牙状态 --&gt;
+    &lt;/h2&gt;
+    &lt;table border=&quot;1&quot;&gt; 
+        &lt;tr&gt;        &lt;!--表格的第一行 --&gt;
+            &lt;td&gt;     &lt;b&gt;Connected&lt;/b&gt;       &lt;/td&gt; 
+            &lt;td&gt;     &lt;b&gt;Service Discovery Completed&lt;/b&gt;       &lt;/td&gt;      
+        &lt;/tr&gt;
+        &lt;tr&gt;        &lt;!--表格的第二行 --&gt;
+            &lt;td id=&quot;status_connected&quot;&gt; false &lt;/td&gt; 
+            &lt;td id=&quot;status_discovered&quot;&gt; false &lt;/td&gt; 
+        &lt;/tr&gt;  
+    &lt;/table&gt;
+    &lt;h2&gt;
+        Device Discovery  Or Disconnect  &lt;!-- 扫描/发现蓝牙设备 --&gt;
+    &lt;/h2&gt;
+    &lt;button id = &quot;btn_scan&quot; onclick=&quot;discoverOrdisconnectDevices()&quot;&gt;Start scan&lt;/button&gt;  &lt;!--  在第4课基础上修改的回调函数 --&gt;
+&lt;/body&gt;</code></pre></html>
+
+<h3 id="Step4：代码解析"><a href="#Step4：代码解析" class="headerlink" title="Step4：代码解析"></a>Step4：代码解析</h3><p>1.开头添加的标志变量has_accelerometer_service，has_led_service，has_device_information_service，has_temperature_serivce，用于核对BBC MicroBit有没有相应的服务，有true无false。而has_accelerometer_data ，has_led_matrix_state，has_model_name_string，has_temperature 用于核对特性是否存在。service UUIDs 和 characteristic UUIDs用于核对板子的特性和服务来进行连接。led_matrix_state，model_number_string，accelerometer_data，temperature，这些都是定义特性相应的变量。service_count，characteristic_count服务和特性发现的数量。services_discovered，characteristics_discovered应该被发现服务和特性的数量</p>
+<p>2.这里要添加service UUID和characteristic UUID号，用来进行与开发板中服务UUID号进行核对。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200619111018.png" alt=""></p>
+<p>3.函数function discoverSvcsAndChars()是用来发现开发板的服务和特性，使用该函数connected_server.getPrimaryServices()获取BBC MicroBit板子上的主要服务。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200619111043.png" alt=""></p>
+<p>4.service_count = services.length是表示发现BBC MicroBit板服务的个数，并将发现的服务打印出来。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200619111046.png" alt=""></p>
+<p>5.接下来我们要对已发现的服务通过if函数进行判断，核对是否一致。完成后要将一致的uuid号打印输出，然后 函数service.getCharacteristics()要获取该服务下的所有特性，对该特性通过if语句判断进行核对。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200619111055.png" alt=""></p>
+<p>6.最后要把要发现的服务和特性数量与已发现的服务和特性数量进行核对。如果一致则成功，将打印FINISHED DISCOVERY。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200619111100.png" alt=""></p>
+<p>7.在信息核对一致成功后，我们要把setDiscoveryStatus(true)状态true通过函数function setDiscoveryStatus(status) 显示出来，表示添加服务及其特性成功了，这样就结束啦！</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200619111104.png" alt=""></p>
+<p>8.程序编辑好后打开，在浏览器中按F12，观察。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200619111107.png" alt=""></p>
+<p>实验现象：</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200619111111.png" alt=""></p>
+<p>Step5：</p>
+<p>资源 1.有关microbit开发板各服务、特性的教程式参考资源： <a href="https://lancaster-university.github.io/microbit-docs/ble/profile/" target="_blank" rel="noopener">https://lancaster-university.github.io/microbit-docs/ble/profile/</a> </p>
+<p>2.服务、特性的UUID请见： <a href="https://lancaster-university.github.io/microbit-docs/resources/bluetooth/bluetooth_profile.html" target="_blank" rel="noopener">https://lancaster-university.github.io/microbit-docs/resources/bluetooth/bluetooth_profile.html</a> 3.Chrome浏览器的插件，使用它可以查看周边蓝牙设备的信息：状态、服务、特性、描述符等。 chrome://bluetooth-internals/#adapter </p>
+<p>4.BBC MicroBit开发板网页编辑器 <a href="https://makecode.microbit.org/#editor" target="_blank" rel="noopener">https://makecode.microbit.org/#editor</a></p>
 	
 		</div>
 		
@@ -340,12 +569,8 @@
 	<span>
 		<a id="totop-post-page">返回顶部</a>
 		
-			<a href="/2020/06/19/title-1/" title="服务特性" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="博客心得" rel="next">
+			<a href="/2020/06/16/title/" title="设备连接" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -366,22 +591,22 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/06/19/title-1/" title="服务特性">
-								服务特性			
+							<a class="relate-post-title" href="/2020/06/16/title/" title="设备连接">
+								设备连接			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
-								六月 19日, 2020				
+								六月 16日, 2020				
 							</p>
 							<p class="relate-post-content">
-								Step1:发现服务和特性1.大家在我的 BBC MicroBit蓝牙设备系列（一）中从https://makecode.microbit.org/v0/89975-20684-84568-20127 下载固件到BBC Micro:b...
+								设备连接Micro:bit是由英国BBC公司推出的一款手持式可编程的微型计算机，可用于各种很新潮的创新，从机器人到乐器 – 无止尽，从小学到大学，非常容易开始，拥有无限可能性！一块BBC小板子上有温度传感器和光线传感器，运动传感器（加...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/2020/06/19/title-1/" title="服务特性">				
+							<a href="/2020/06/16/title/" title="设备连接">				
 								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="服务特性"/>
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="设备连接"/>
 							</a>
 						</div>
 					</li>												
