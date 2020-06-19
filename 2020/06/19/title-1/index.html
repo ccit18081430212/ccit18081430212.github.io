@@ -316,221 +316,7 @@
 <p>然后保存，下载。</p>
 <p>2.在你的此电脑&gt;下载路径下就有你下载的.hex文件，将下载的固件.hex文件移到开发板对应的MINCROBIT（G)盘中，这个时候打开Chrome自带的蓝牙工具，进行连接，连接成功后会发现服务已被添加成功。</p>
 <p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200619110456.png" alt=""></p>
-<h3 id="Step3：修改电脑端源码增加温度服务、特性"><a href="#Step3：修改电脑端源码增加温度服务、特性" class="headerlink" title="Step3：修改电脑端源码增加温度服务、特性"></a>Step3：修改电脑端源码增加温度服务、特性</h3><html>
-    <head>   <!-- 用于定义文档的头部，描述了文档的各种属性和信息。<head> 中的元素可以引用脚本、指示浏览器在哪里找到样式表、提供元信息等等。 -->
-        <script>
-        var    selected_device;    // 保存用户选择的蓝牙设备 
-        var    connected_server;    // 在第2课基础上添加的变量,保存用户连接的蓝牙设备 
-        var    connected = false;     // 在第3课基础上添加的变量,保存电脑蓝牙的当前连接状态
-        var    services_discovered = false;  //在第5课上添加
-        //在第5课上添加以下内容
-        // presence of services and characteristics 
-        var has_accelerometer_service = false; 
-        var has_accelerometer_data = false; 
-        var has_led_service = false;
-        var has_led_matrix_state = false; 
-        var has_device_information_service = false; 
-        var has_model_name_string = false; 
-
-<pre><code>   // service UUIDs 
-   ACCELEROMETER_SERVICE = &apos;e95d0753-251d-470a-a062-fa1922dfa9a8&apos;; 
-   LED_SERVICE = &apos;e95dd91d-251d-470a-a062-fa1922dfa9a8&apos;; 
-   DEVICE_INFORMATION_SERVICE = &apos;0000180a-0000-1000-8000-00805f9b34fb&apos;;
-   // characteristic UUIDs 
-   ACCELEROMETER_DATA = &apos;e95dca4b-251d-470a-a062-fa1922dfa9a8&apos;; 
-   LED_MATRIX_STATE  = &apos;e95d7b77-251d-470a-a062-fa1922dfa9a8&apos;; 
-   MODEL_NUMBER_STRING = &apos;00002a24-0000-1000-8000-00805f9b34fb&apos;; 
-
-   // cached characteristics 
-    var led_matrix_state; 
-    var model_number_string;
-    var accelerometer_data; 
-
-     //
-     var service_count;
-     var services_discovered;
-     var characteristics_discovered;  
-     var characteristic_count ; 
-    function discoverOrdisconnectDevices()  // 在第4课基础上添加的函数
-    {
-        console.log(&quot;discoverDevicesOrDisconnect&quot;); 
-        if (!connected)
-            discoverDevices();
-        else
-        {
-            selected_device.gatt.disconnect();
-        }
-
-    }
-
-    function onDisconnected()           // 在第4课基础上添加的函数
-    {  
-         console.log(&quot;onDisconnected&quot;);  
-         resetUI(); 
-    }
-    function discoverDevices()
-    {
-        console.log(&quot;discoverDevices&quot;);             //console.log：控制台打印输出
-        var options = {acceptAllDevices:true,
-            optionalServices: [DEVICE_INFORMATION_SERVICE, ACCELEROMETER_SERVICE, LED_SERVICE]  //在第5节课上添加
-        }        //发现所有周边蓝牙设备
-        navigator.bluetooth.requestDevice(options)   //Navigator对象：包含有关浏览器的信息。
-        .then(device =&gt; {
-            console.log(&apos;&gt; Name:&apos; + device.name);
-            console.log(&apos;&gt; Id:&apos;   + device.id);
-            console.log(&apos;&gt; Connected:&apos; + device.gatt.connected);
-            selected_device = device;
-            console.log(selected_device);
-            connect();                              //在第2课基础上添加的函数
-        })
-        .catch(error =&gt; {
-            alert(&apos;ERROR:&apos; +error);
-            console.log(&apos;ERROR:&apos; + error);
-            });
-    }
-
-    function connect()                             //在第2课基础上添加的函数
-    {
-        console.log(&quot;connecting&quot;);
-        selected_device.gatt.connect()
-        .then(
-            function (server)        //表示连接成功
-            {
-                console.log(&quot;Connected to&quot; + server.device.id);
-                console.log(&quot;Connected=&quot; + server.connected);
-                selected_device.addEventListener( &apos;gattserverdisconnected&apos;,onDisconnected);  // 在第4课基础上添加的函数
-
-                connected_server = server;
-                discoverSvcsAndChars();    ////在第5课基础上添加的函数
-                setConnectedStatus(true);   // 在第3课基础上添加的函数,设置电脑蓝牙的当前连接状态
-
-            },
-            function (error)        //表示连接失败
-            {
-                console.log(&quot;ERROR:could not connct-&quot; + error);
-                alert(&quot;ERROR:could not connct-&quot; + error);
-                setConnectedStatus(false);  // 在第3课基础上添加的函数,设置电脑蓝牙的当前连接状态
-
-            }
-        );
-    }
-
-    function setConnectedStatus(status)  // 在第3课基础上添加的函数,设置电脑蓝牙的当前连接状态
-    {
-        connected = status;
-        document.getElementById(&apos;status_connected&apos;).innerHTML = status;
-        if (status == true) 
-        {   
-            document.getElementById(&apos;btn_scan&apos;).innerHTML = &quot;Disconnect&quot;; 
-        } 
-        else 
-        {   
-            document.getElementById(&apos;btn_scan&apos;).innerHTML = &quot;Discover Devices&quot;;  
-        }
-    }
-
-    function setDiscoveryStatus(status)
-     {  
-         services_discovered = status; 
-         document.getElementById(&apos;status_discovered&apos;).innerHTML = status;
-     }
-
-    function resetUI()      // 在第4课基础上添加的函数
-    {
-        setConnectedStatus(false);
-        setDiscoveryStatus(false);    // 在第5课基础上添加的函数
-    }
-
-    function discoverSvcsAndChars()    //在第5课基础上添加的函数
-    {  
-        console.log(&quot;discoverSvcsAndChars server=&quot; + connected_server); 
-        connected_server.getPrimaryServices()
-        .then(services =&gt; 
-        {    
-                has_accelerometer_service = false;    
-                has_led_service = false;    
-                has_device_information_service = false; 
-
-                services_discovered = 0;    
-                service_count = services.length;    
-                console.log(&quot;Got &quot; + service_count + &quot; services&quot;); 
-
-                services.forEach(service =&gt; 
-                {     
-                    if (service.uuid == ACCELEROMETER_SERVICE)
-                    {      
-                        has_accelerometer_service = true;    
-                    }     
-                    if (service.uuid == LED_SERVICE) 
-                    {      
-                        has_led_service = true;     
-                    }     
-                    if (service.uuid == DEVICE_INFORMATION_SERVICE) 
-                    {      
-                        has_device_information_service = true;     
-                    }     
-                    console.log(&apos;Getting Characteristics for service &apos; + service.uuid);     
-                    service.getCharacteristics()
-                    .then(characteristics =&gt; 
-                    {      
-                        console.log(&apos;&gt; Service: &apos; + service.uuid);      
-                        services_discovered++;     
-                        characteristics_discovered = 0;      
-                        characteristic_count = characteristics.length;      
-                        characteristics.forEach(characteristic =&gt; 
-                        {       
-                            characteristics_discovered++;       
-                            console.log(&apos;&gt;&gt; Characteristic: &apos; + characteristic.uuid);       
-                            if (characteristic.uuid == ACCELEROMETER_DATA)
-                            {        
-                                accelerometer_data = characteristic;        
-                                has_accelerometer_data = true;       
-                            }       
-                            if (characteristic.uuid == LED_MATRIX_STATE) 
-                            {        
-                                led_matrix_state = characteristic;        
-                                has_led_matrix_state = true;       
-                            }       
-                            if (characteristic.uuid == MODEL_NUMBER_STRING) 
-                            {        
-                                model_number_string = characteristic;        
-                                has_model_name_string = true;       
-                            }       
-                            if (services_discovered == service_count &amp;&amp; characteristics_discovered == characteristic_count) 
-                            {        
-                                console.log(&quot;FINISHED DISCOVERY&quot;); 
-                                setDiscoveryStatus(true);       
-                                //setDiscoveryStatus(true);                  
-                            }      
-                        });     
-                    });    
-                });  
-        });
-    }
-
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h2&gt;
-        Status    &lt;!-- 显示蓝牙状态 --&gt;
-    &lt;/h2&gt;
-    &lt;table border=&quot;1&quot;&gt; 
-        &lt;tr&gt;        &lt;!--表格的第一行 --&gt;
-            &lt;td&gt;     &lt;b&gt;Connected&lt;/b&gt;       &lt;/td&gt; 
-            &lt;td&gt;     &lt;b&gt;Service Discovery Completed&lt;/b&gt;       &lt;/td&gt;      
-        &lt;/tr&gt;
-        &lt;tr&gt;        &lt;!--表格的第二行 --&gt;
-            &lt;td id=&quot;status_connected&quot;&gt; false &lt;/td&gt; 
-            &lt;td id=&quot;status_discovered&quot;&gt; false &lt;/td&gt; 
-        &lt;/tr&gt;  
-    &lt;/table&gt;
-    &lt;h2&gt;
-        Device Discovery  Or Disconnect  &lt;!-- 扫描/发现蓝牙设备 --&gt;
-    &lt;/h2&gt;
-    &lt;button id = &quot;btn_scan&quot; onclick=&quot;discoverOrdisconnectDevices()&quot;&gt;Start scan&lt;/button&gt;  &lt;!--  在第4课基础上修改的回调函数 --&gt;
-&lt;/body&gt;</code></pre></html>
-
-<h3 id="Step4：代码解析"><a href="#Step4：代码解析" class="headerlink" title="Step4：代码解析"></a>Step4：代码解析</h3><p>1.开头添加的标志变量has_accelerometer_service，has_led_service，has_device_information_service，has_temperature_serivce，用于核对BBC MicroBit有没有相应的服务，有true无false。而has_accelerometer_data ，has_led_matrix_state，has_model_name_string，has_temperature 用于核对特性是否存在。service UUIDs 和 characteristic UUIDs用于核对板子的特性和服务来进行连接。led_matrix_state，model_number_string，accelerometer_data，temperature，这些都是定义特性相应的变量。service_count，characteristic_count服务和特性发现的数量。services_discovered，characteristics_discovered应该被发现服务和特性的数量</p>
+<h3 id="Step3：修改电脑端源码增加温度服务、特性"><a href="#Step3：修改电脑端源码增加温度服务、特性" class="headerlink" title="Step3：修改电脑端源码增加温度服务、特性"></a>Step3：修改电脑端源码增加温度服务、特性</h3><h3 id="Step4：代码解析"><a href="#Step4：代码解析" class="headerlink" title="Step4：代码解析"></a>Step4：代码解析</h3><p>1.开头添加的标志变量has_accelerometer_service，has_led_service，has_device_information_service，has_temperature_serivce，用于核对BBC MicroBit有没有相应的服务，有true无false。而has_accelerometer_data ，has_led_matrix_state，has_model_name_string，has_temperature 用于核对特性是否存在。service UUIDs 和 characteristic UUIDs用于核对板子的特性和服务来进行连接。led_matrix_state，model_number_string，accelerometer_data，temperature，这些都是定义特性相应的变量。service_count，characteristic_count服务和特性发现的数量。services_discovered，characteristics_discovered应该被发现服务和特性的数量</p>
 <p>2.这里要添加service UUID和characteristic UUID号，用来进行与开发板中服务UUID号进行核对。</p>
 <p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200619111018.png" alt=""></p>
 <p>3.函数function discoverSvcsAndChars()是用来发现开发板的服务和特性，使用该函数connected_server.getPrimaryServices()获取BBC MicroBit板子上的主要服务。</p>
@@ -636,6 +422,29 @@ title: 博客date: 2020-05-27 19:28:43tags:—Hexo（官方网站）是一个快
 			
 					<li>
 						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">
+								Hexo主题与Gitalk			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 23日, 2020				
+							</p>
+							<p class="relate-post-content">
+								Hexo主题配置一、我们现在的博客是初始化的主题，所以我们要给Hexo换上新装。Hexo主题在官网有很多，大家可以登录查看官网链接。
+有自己中意的主题以后，前往作者的Github,点击：“clone or download”，把文件夹...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo主题与Gitalk"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
 							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github">
 								Hexo上传至Github			
 							</a>
@@ -655,29 +464,6 @@ title: 博客date: 2020-05-27 19:28:43tags:—Hexo（官方网站）是一个快
 							<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github">				
 								
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo上传至Github"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">
-								Hexo主题与Gitalk			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 23日, 2020				
-							</p>
-							<p class="relate-post-content">
-								Hexo主题配置一、我们现在的博客是初始化的主题，所以我们要给Hexo换上新装。Hexo主题在官网有很多，大家可以登录查看官网链接。
-有自己中意的主题以后，前往作者的Github,点击：“clone or download”，把文件夹...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo主题与Gitalk"/>
 							</a>
 						</div>
 					</li>												
