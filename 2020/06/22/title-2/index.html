@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      Hexo本地搭建 | scl
+      读写特性 | scl
     
   </title>
   <meta name="author" content="ccit18081430212">
@@ -89,7 +89,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「Hexo本地搭建」
+			「读写特性」
 		
 	</p>
 
@@ -239,8 +239,8 @@
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" itemprop="url">
-		Hexo本地搭建
+	<a href="/2020/06/22/title-2/" itemprop="url">
+		读写特性
 	</a>
 
 		</div>
@@ -256,9 +256,9 @@
 
 	更新于
 
-	<a href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" itemprop="url">
-		<time datetime="2020-05-19T13:02:40.000Z" itemprop="dateUpdated">
-	  		2020-05-30
+	<a href="/2020/06/22/title-2/" itemprop="url">
+		<time datetime="2020-06-21T23:24:29.000Z" itemprop="dateUpdated">
+	  		2020-06-22
 	  </time>
 	</a> 
 
@@ -269,8 +269,8 @@
 				
 	<i class="icon-price-tags"></i>
 	
-		<a href="/tags/Hexo/" class=" ">
-			Hexo
+		<a href="/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/" class=" ">
+			开发板
 		</a>
 	
 		
@@ -279,7 +279,7 @@
 			
 
 	
-    <span class="leancloud_visitors" id="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/_visitors" data-url="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" data-title="Hexo本地搭建">
+    <span class="leancloud_visitors" id="/2020/06/22/title-2/_visitors" data-url="/2020/06/22/title-2/" data-title="读写特性">
        	<i class="icon-eye"></i>
        	热度
         
@@ -291,7 +291,7 @@
 
 
 	
-    <span class="leancloud_likes" id="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/_likes" data-url="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" data-title="Hexo本地搭建" rel="unlike">
+    <span class="leancloud_likes" id="/2020/06/22/title-2/_likes" data-url="/2020/06/22/title-2/" data-title="读写特性" rel="unlike">
         <i class="icon-heart"></i>
         喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -301,30 +301,29 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<p>本博主第一篇文章，主要介绍：为何使用hexo。如何进行hexo本地的搭建以及遇到的问题，解决方案。</p>
-<h1 id="为何使用Hexo"><a href="#为何使用Hexo" class="headerlink" title="为何使用Hexo"></a>为何使用Hexo</h1><p>目前网络有形形色色的博客，我们在这些平台的注册博客，发表文章，如果后来平台消失，我们发表的宝贵文章，也随之消失。</p>
-<p>我也将会在hexo 中记录自己学习心得，作为自己的“北大荒”。</p>
-<h1 id="Hexo本地搭建"><a href="#Hexo本地搭建" class="headerlink" title="Hexo本地搭建"></a>Hexo本地搭建</h1><h2 id="环境的搭建"><a href="#环境的搭建" class="headerlink" title="环境的搭建"></a>环境的搭建</h2><p>事物的运行都需要一个环境，所以要想让hexo运行就需要为其搭建一个环境。</p>
-<p>Node.js,和Git是hexo环境搭建的主要的软件。</p>
-<p>一、安装<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>去官网选择最新的版本，安装完成后在CMD指令窗口输入指令：”<strong><em>node -v</em></strong>“。</p>
-<p> 等待电脑给出 Node 的版本号，如若给出则安装成功。</p>
-<p>二、安装Git</p>
-<p> 安装  <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>,完成后在CMD窗口输入“<strong>Git</strong>”指令。</p>
-<p>如若出现上图，则表示Git安装成功。</p>
-<h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><p>环境搭建完成后，我们就要进行Hexo的安装。</p>
-<p>在CMD窗口输入“<strong>npm install hexo-cli -g</strong>”。进行安装。</p>
-<p>安装完成后如果可以看到hexo-cli的版本号，则表示安装成功。</p>
-<p>上图可以看到Hexo的版本号，代表已经安装成功。</p>
-<h2 id="本地博客的创建"><a href="#本地博客的创建" class="headerlink" title="本地博客的创建"></a>本地博客的创建</h2><p>所有准备工作完成后，我们就要进行本地博客的创建。</p>
-<p>一、首先在CMD指令窗口输入：<strong>md blog</strong>  ，这个指令是创建一个名为”blog”的文件夹。建议将此文件夹创建在其余盘中。</p>
-<p>二、初始化博客：分别在CMD中依次输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>若实验结果出现“Start blogging with Hexo!”字符串，则表示初始化成功且可以开始写博客了。<strong>注意：在初始化Hexo博客之前，必须保证根目录为空,否则无法成功初始化。</strong></p>
-<p>如若出现上图则表示博客创建成功。</p>
-<p>三、本地博客预览</p>
-<p>在CMD窗口输入指令：”<strong>hexo s</strong>“</p>
-<p>若结果发现有”Hexo is running at <code>http://localhost:4000/</code>字符串，则表示启动成功，Hexo当前就运行在上述网址。</p>
+			<h3 id="一，修改源码"><a href="#一，修改源码" class="headerlink" title="一，修改源码"></a>一，修改源码</h3><p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073819.png" alt=""></p>
+<h4 id="Step2-写特性的相关代码"><a href="#Step2-写特性的相关代码" class="headerlink" title="Step2:写特性的相关代码"></a>Step2:写特性的相关代码</h4><p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073831.png" alt=""></p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073837.png" alt=""></p>
+<h4 id="Step3-HTML相关代码的修改"><a href="#Step3-HTML相关代码的修改" class="headerlink" title="Step3:HTML相关代码的修改"></a>Step3:HTML相关代码的修改</h4><p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073842.png" alt=""></p>
+<h3 id="二，代码解析"><a href="#二，代码解析" class="headerlink" title="二，代码解析"></a>二，代码解析</h3><p>1.你的蓝牙设备应该包含GATT设备信息服务，该服务至少应该包含模型名称字符串特征。我们将读取它的值并在web页面中显示结果。函数readModelNumber() 就是读特性所调用的函数。只有当我们成功连接到一个设备时，才能执行读取和写入特征值。在进行读或写操作之前，我们还需要知道所连接的设备包含所需的服务和特性。因此，服务发现也必须完成。因此，在readModelNumberl()和randomLEDs()函数开始时，我们将在开始时执行一些简单的防御性验证，以检查我们已经达到了所需的状态，以下代码就是防御性验证:</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073846.png" alt=""></p>
+<p>2.完成防御性验证，我们就开始读值，然后将其打印出来。Uint8Array是8 位无符号整数值的类型化数组，将读到的值赋给data。TextDecoder接口表示用于特定文本编码的解码器，例如 UTF-8,ISO-8859-2，KOI8-R等。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%872020062207436666.png" alt=""></p>
+<p>3.如果前面的函数有出错的，.catch的作用是捕捉前一个函数的错误,并将错误打印出来，供编码者观看。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073852.png" alt=""></p>
+<p>4.对于写特性，我们将看到写入特征值与读取特征值是很相似的。我们将编写一个值到LED矩阵中，在BBC开发板上控制5 x5 LED矩阵LED开启和关闭。规则如下：</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073902.png" alt=""></p>
+<p>为了简单起见，我们将让代码生成一个范围为0到31的随机值就是通过函数math.random():0~31，math.floor(x):返回小于等于x的最大整数。当我们将它写入BBC micro:bit时，每当我们点击网页上的按钮时，LED矩阵就会显示一个随机的图案。led_array[1] = 1; led_array[2] = 2;…..这些值是写入的特定值，您可以控制这些值，选择权在你。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073856.png" alt=""></p>
+<p>5.在使用这些函数时，我们需要点击网页上Randomise LEDs，Read Model Number按钮，来调用这些函数。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073859.png" alt=""></p>
+<p>6.程序编辑好后打开，在浏览器中按F12，观察。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073905.png" alt=""></p>
+<p>实验现象：</p>
+<p>1.表示连接成功。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073909.png" alt=""></p>
+<p>2.通过点击Randomise LEDs,来改变LED灯的亮灭。</p>
+<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073912.png" alt=""></p>
 	
 		</div>
 		
@@ -343,12 +342,8 @@
 	<span>
 		<a id="totop-post-page">返回顶部</a>
 		
-			<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2020/03/15/hello-world/" title="Hello World" rel="next">
+			<a href="/2020/06/19/title-1/" title="服务特性" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -366,80 +361,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github">
-								Hexo上传至Github			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 23日, 2020				
-							</p>
-							<p class="relate-post-content">
-								准备工作我们要将自己的博客上传至Github,首先我们需要将去注册我们GIithub账户。
-
-注册Github：右上角的sign in是登录，sign up是注册。
-新建仓库(Repository):点击create reposito...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo上传至Github"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">
-								Hexo主题与Gitalk			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 23日, 2020				
-							</p>
-							<p class="relate-post-content">
-								Hexo主题配置一、我们现在的博客是初始化的主题，所以我们要给Hexo换上新装。Hexo主题在官网有很多，大家可以登录查看官网链接。
-有自己中意的主题以后，前往作者的Github,点击：“clone or download”，把文件夹...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo主题与Gitalk"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/06/22/title-2/" title="读写特性">
-								读写特性			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								六月 22日, 2020				
-							</p>
-							<p class="relate-post-content">
-								一，修改源码
-Step2:写特性的相关代码
-
-Step3:HTML相关代码的修改
-二，代码解析1.你的蓝牙设备应该包含GATT设备信息服务，该服务至少应该包含模型名称字符串特征。我们将读取它的值并在web页面中显示结果。函数readM...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/06/22/title-2/" title="读写特性">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="读写特性"/>
-							</a>
-						</div>
-					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -504,6 +425,78 @@ title: 博客date: 2020-05-27 19:28:43tags:—Hexo（官方网站）是一个快
 							<a href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="博客心得">				
 								
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="博客心得"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github">
+								Hexo上传至Github			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 23日, 2020				
+							</p>
+							<p class="relate-post-content">
+								准备工作我们要将自己的博客上传至Github,首先我们需要将去注册我们GIithub账户。
+
+注册Github：右上角的sign in是登录，sign up是注册。
+新建仓库(Repository):点击create reposito...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo上传至Github"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">
+								Hexo主题与Gitalk			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 23日, 2020				
+							</p>
+							<p class="relate-post-content">
+								Hexo主题配置一、我们现在的博客是初始化的主题，所以我们要给Hexo换上新装。Hexo主题在官网有很多，大家可以登录查看官网链接。
+有自己中意的主题以后，前往作者的Github,点击：“clone or download”，把文件夹...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo主题与Gitalk"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" title="Hexo本地搭建">
+								Hexo本地搭建			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 19日, 2020				
+							</p>
+							<p class="relate-post-content">
+								本博主第一篇文章，主要介绍：为何使用hexo。如何进行hexo本地的搭建以及遇到的问题，解决方案。
+为何使用Hexo目前网络有形形色色的博客，我们在这些平台的注册博客，发表文章，如果后来平台消失，我们发表的宝贵文章，也随之消失。
+我也...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" title="Hexo本地搭建">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo本地搭建"/>
 							</a>
 						</div>
 					</li>												
