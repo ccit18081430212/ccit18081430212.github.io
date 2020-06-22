@@ -301,29 +301,29 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<h3 id="一，修改源码"><a href="#一，修改源码" class="headerlink" title="一，修改源码"></a>一，修改源码</h3><p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073819.png" alt=""></p>
-<h4 id="Step2-写特性的相关代码"><a href="#Step2-写特性的相关代码" class="headerlink" title="Step2:写特性的相关代码"></a>Step2:写特性的相关代码</h4><p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073831.png" alt=""></p>
-<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073837.png" alt=""></p>
-<h4 id="Step3-HTML相关代码的修改"><a href="#Step3-HTML相关代码的修改" class="headerlink" title="Step3:HTML相关代码的修改"></a>Step3:HTML相关代码的修改</h4><p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073842.png" alt=""></p>
+			<h3 id="一，修改源码"><a href="#一，修改源码" class="headerlink" title="一，修改源码"></a>一，修改源码</h3><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073819.png" alt=""></p>
+<h4 id="Step2-写特性的相关代码"><a href="#Step2-写特性的相关代码" class="headerlink" title="Step2:写特性的相关代码"></a>Step2:写特性的相关代码</h4><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073831.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073837.png" alt=""></p>
+<h4 id="Step3-HTML相关代码的修改"><a href="#Step3-HTML相关代码的修改" class="headerlink" title="Step3:HTML相关代码的修改"></a>Step3:HTML相关代码的修改</h4><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073842.png" alt=""></p>
 <h3 id="二，代码解析"><a href="#二，代码解析" class="headerlink" title="二，代码解析"></a>二，代码解析</h3><p>1.你的蓝牙设备应该包含GATT设备信息服务，该服务至少应该包含模型名称字符串特征。我们将读取它的值并在web页面中显示结果。函数readModelNumber() 就是读特性所调用的函数。只有当我们成功连接到一个设备时，才能执行读取和写入特征值。在进行读或写操作之前，我们还需要知道所连接的设备包含所需的服务和特性。因此，服务发现也必须完成。因此，在readModelNumberl()和randomLEDs()函数开始时，我们将在开始时执行一些简单的防御性验证，以检查我们已经达到了所需的状态，以下代码就是防御性验证:</p>
-<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073846.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073846.png" alt=""></p>
 <p>2.完成防御性验证，我们就开始读值，然后将其打印出来。Uint8Array是8 位无符号整数值的类型化数组，将读到的值赋给data。TextDecoder接口表示用于特定文本编码的解码器，例如 UTF-8,ISO-8859-2，KOI8-R等。</p>
-<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%872020062207436666.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%872020062207436666.png" alt=""></p>
 <p>3.如果前面的函数有出错的，.catch的作用是捕捉前一个函数的错误,并将错误打印出来，供编码者观看。</p>
-<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073852.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073852.png" alt=""></p>
 <p>4.对于写特性，我们将看到写入特征值与读取特征值是很相似的。我们将编写一个值到LED矩阵中，在BBC开发板上控制5 x5 LED矩阵LED开启和关闭。规则如下：</p>
-<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073902.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073902.png" alt=""></p>
 <p>为了简单起见，我们将让代码生成一个范围为0到31的随机值就是通过函数math.random():0~31，math.floor(x):返回小于等于x的最大整数。当我们将它写入BBC micro:bit时，每当我们点击网页上的按钮时，LED矩阵就会显示一个随机的图案。led_array[1] = 1; led_array[2] = 2;…..这些值是写入的特定值，您可以控制这些值，选择权在你。</p>
-<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073856.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073856.png" alt=""></p>
 <p>5.在使用这些函数时，我们需要点击网页上Randomise LEDs，Read Model Number按钮，来调用这些函数。</p>
-<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073859.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073859.png" alt=""></p>
 <p>6.程序编辑好后打开，在浏览器中按F12，观察。</p>
-<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073905.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073905.png" alt=""></p>
 <p>实验现象：</p>
 <p>1.表示连接成功。</p>
-<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073909.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073909.png" alt=""></p>
 <p>2.通过点击Randomise LEDs,来改变LED灯的亮灭。</p>
-<p><img src="D:%5Cblog%5Cccit18081430212Blog%5Csource%5Cccit18081430212%5CQQ%E5%9B%BE%E7%89%8720200622073912.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200622073912.png" alt=""></p>
 	
 		</div>
 		
