@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>启用通知</title>
+      <link href="/2020/06/23/title-3/"/>
+      <url>/2020/06/23/title-3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一，要添加的代码内容和相关的解析"><a href="#一，要添加的代码内容和相关的解析" class="headerlink" title="一，要添加的代码内容和相关的解析"></a>一，要添加的代码内容和相关的解析</h2><h3 id="step1-用户界面状态"><a href="#step1-用户界面状态" class="headerlink" title="step1:用户界面状态"></a>step1:用户界面状态</h3><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%871.png" alt=""></p><p>2.添加函数setNotificationsStatus(status)，将通知订阅的状态传进来，将该状态赋给notifications_enabled。</p><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%872.png" alt=""></p><p>3.有这个setNotificationsStatus(status)函数，我们要进行调用，将其放入resetUI()函数中调用。</p><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%873.png" alt=""></p><h3 id="Step2-验证状态"><a href="#Step2-验证状态" class="headerlink" title="Step2:验证状态"></a>Step2:验证状态</h3><p>订阅和接收通知只能在我们与设备连接时执行。我们还需要检查连接的设备是否包含所要求的相关的服务和特征，然后我们才试图启用有关该特征的通知。因此，我们将在订阅加速计数据通知的代码中包含一些验证，就像我们在上一部分中读取和写入特征时所做的那样。添加的函数是toggleAccelerometerNotifications()</p><p>内容如下：</p><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%874.png" alt=""></p><h3 id="Step3-启用和禁用通知"><a href="#Step3-启用和禁用通知" class="headerlink" title="Step3:启用和禁用通知"></a>Step3:启用和禁用通知</h3><p>通知也是有启用和禁用的，我们要么开始通知，要么取消订阅并停止它们，这取决于当前的订阅状态。所以我们要有以下判断</p><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%875.png" alt=""></p><h3 id="Step4-通知事件"><a href="#Step4-通知事件" class="headerlink" title="Step4:通知事件"></a>Step4:通知事件</h3><p>我们仍然需要一些代码来处理收到的通知。我们还需要在停止通知时做一些整理,所以在toggleAccelerometerNotifications()函数需要添加以下代码<img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%876.png" alt=""></p><p>在toggleAccelerometerNotifications()函数中的位置如下：</p><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%878.png" alt=""></p><p>当接收到某个特征的通知时，将触发一个事件并附加该特征值。在更改中，我们所做的是注册一个函数来处理此事件。</p><h3 id="Step5：处理通知"><a href="#Step5：处理通知" class="headerlink" title="Step5：处理通知"></a>Step5：处理通知</h3><p>我们的最后一个任务是添加onAccelerometerData函数，它将在每次收到通知时被调用。事件处理程序接收一个事件对象，将附加到事件对象目标值的ArrayBuffer中。</p><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%879.png" alt=""></p><h2 id="二，实验现象"><a href="#二，实验现象" class="headerlink" title="二，实验现象"></a>二，实验现象</h2><h3 id="Step1：浏览器现象"><a href="#Step1：浏览器现象" class="headerlink" title="Step1：浏览器现象"></a>Step1：浏览器现象</h3><h3 id="在浏览器中重新加载程序并进行测试。结果应该是这样的"><a href="#在浏览器中重新加载程序并进行测试。结果应该是这样的" class="headerlink" title="在浏览器中重新加载程序并进行测试。结果应该是这样的:"></a>在浏览器中重新加载程序并进行测试。结果应该是这样的:</h3><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%877.png" alt=""></p><h3 id="Step2：开发板现象"><a href="#Step2：开发板现象" class="headerlink" title="Step2：开发板现象"></a>Step2：开发板现象</h3><p>通过点击按钮，该现象与MicroBit蓝牙设备进行读写特性（三）现象一致。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 开发板 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>读写特性</title>
       <link href="/2020/06/22/title-2/"/>
       <url>/2020/06/22/title-2/</url>

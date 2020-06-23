@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      Hexo上传至Github | scl
+      启用通知 | scl
     
   </title>
   <meta name="author" content="ccit18081430212">
@@ -89,7 +89,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「Hexo上传至Github」
+			「启用通知」
 		
 	</p>
 
@@ -239,8 +239,8 @@
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" itemprop="url">
-		Hexo上传至Github
+	<a href="/2020/06/23/title-3/" itemprop="url">
+		启用通知
 	</a>
 
 		</div>
@@ -256,9 +256,9 @@
 
 	更新于
 
-	<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" itemprop="url">
-		<time datetime="2020-05-23T12:05:08.000Z" itemprop="dateUpdated">
-	  		2020-05-30
+	<a href="/2020/06/23/title-3/" itemprop="url">
+		<time datetime="2020-06-23T04:09:07.000Z" itemprop="dateUpdated">
+	  		2020-06-23
 	  </time>
 	</a> 
 
@@ -269,8 +269,8 @@
 				
 	<i class="icon-price-tags"></i>
 	
-		<a href="/tags/Hexo/" class=" ">
-			Hexo
+		<a href="/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/" class=" ">
+			开发板
 		</a>
 	
 		
@@ -279,7 +279,7 @@
 			
 
 	
-    <span class="leancloud_visitors" id="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/_visitors" data-url="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" data-title="Hexo上传至Github">
+    <span class="leancloud_visitors" id="/2020/06/23/title-3/_visitors" data-url="/2020/06/23/title-3/" data-title="启用通知">
        	<i class="icon-eye"></i>
        	热度
         
@@ -291,7 +291,7 @@
 
 
 	
-    <span class="leancloud_likes" id="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/_likes" data-url="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" data-title="Hexo上传至Github" rel="unlike">
+    <span class="leancloud_likes" id="/2020/06/23/title-3/_likes" data-url="/2020/06/23/title-3/" data-title="启用通知" rel="unlike">
         <i class="icon-heart"></i>
         喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -301,24 +301,24 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>我们要将自己的博客上传至Github,首先我们需要将去注册我们GIithub账户。</p>
-<ol>
-<li><a href="https://github.com/" target="_blank" rel="noopener">注册Github</a>：右上角的<code>sign in</code>是登录，<code>sign up</code>是注册。</li>
-<li><strong>新建仓库(Repository)</strong>:点击<code>create repository</code>按钮。</li>
-<li>查看仓库配置：点击仓库右上角的<code>Settings</code>选项。</li>
-<li>获取本机当前用户的SSH公钥：首先查看在本机的当前用户(操作系统的登录账户)目录下是否已经存在ssh公钥。<code>~</code>表示当前用户的家目录。</li>
-</ol>
-<p><strong>SSH公钥是是将Hexo关键所在，<a href="https://www.bilibili.com/video/BV1cW411A7Jx?p=4" target="_blank" rel="noopener">Github SSH公钥具体配置方法</a></strong></p>
-<h1 id="绑定Hexo和Github"><a href="#绑定Hexo和Github" class="headerlink" title="绑定Hexo和Github"></a>绑定Hexo和Github</h1><p><strong>1.修改本地站点配置文件</strong>: 打开站点目录（<code>blog\</code>）下的<code>_config.yml</code>文件，将最后一部分修改为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:  </span><br><span class="line">          type:  git</span><br><span class="line">          repo:  git@github.com:username&#x2F;username.github.io.git</span><br><span class="line">          branch:  master</span><br></pre></td></tr></table></figure>
-
-<p><strong>2.安装关联hexo和git的工具</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure>
-
-<p>如果最后可以看到这个工具的版本号，则表明安装成功。</p>
-<h1 id="Hexo升天"><a href="#Hexo升天" class="headerlink" title="Hexo升天"></a>Hexo升天</h1><p><strong>部署Hexo</strong>：执行以下命令:hexo d</p>
-<p>这个命令会将本地博客根目录（<code>blog\</code>）下<code>public</code>文件夹里的所有文件上传至Github上的<code>username/username.github.io.git</code>这个仓库。</p>
-<p><strong>2.博客预览</strong>：在浏览器中输入<code>https://username.github.io</code>,如果看到新页面则大功告成.</p>
+			<h2 id="一，要添加的代码内容和相关的解析"><a href="#一，要添加的代码内容和相关的解析" class="headerlink" title="一，要添加的代码内容和相关的解析"></a>一，要添加的代码内容和相关的解析</h2><h3 id="step1-用户界面状态"><a href="#step1-用户界面状态" class="headerlink" title="step1:用户界面状态"></a>step1:用户界面状态</h3><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%871.png" alt=""></p>
+<p>2.添加函数setNotificationsStatus(status)，将通知订阅的状态传进来，将该状态赋给notifications_enabled。</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%872.png" alt=""></p>
+<p>3.有这个setNotificationsStatus(status)函数，我们要进行调用，将其放入resetUI()函数中调用。</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%873.png" alt=""></p>
+<h3 id="Step2-验证状态"><a href="#Step2-验证状态" class="headerlink" title="Step2:验证状态"></a>Step2:验证状态</h3><p>订阅和接收通知只能在我们与设备连接时执行。我们还需要检查连接的设备是否包含所要求的相关的服务和特征，然后我们才试图启用有关该特征的通知。因此，我们将在订阅加速计数据通知的代码中包含一些验证，就像我们在上一部分中读取和写入特征时所做的那样。添加的函数是toggleAccelerometerNotifications()</p>
+<p>内容如下：</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%874.png" alt=""></p>
+<h3 id="Step3-启用和禁用通知"><a href="#Step3-启用和禁用通知" class="headerlink" title="Step3:启用和禁用通知"></a>Step3:启用和禁用通知</h3><p>通知也是有启用和禁用的，我们要么开始通知，要么取消订阅并停止它们，这取决于当前的订阅状态。所以我们要有以下判断</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%875.png" alt=""></p>
+<h3 id="Step4-通知事件"><a href="#Step4-通知事件" class="headerlink" title="Step4:通知事件"></a>Step4:通知事件</h3><p>我们仍然需要一些代码来处理收到的通知。我们还需要在停止通知时做一些整理,所以在toggleAccelerometerNotifications()函数需要添加以下代码<img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%876.png" alt=""></p>
+<p>在toggleAccelerometerNotifications()函数中的位置如下：</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%878.png" alt=""></p>
+<p>当接收到某个特征的通知时，将触发一个事件并附加该特征值。在更改中，我们所做的是注册一个函数来处理此事件。</p>
+<h3 id="Step5：处理通知"><a href="#Step5：处理通知" class="headerlink" title="Step5：处理通知"></a>Step5：处理通知</h3><p>我们的最后一个任务是添加onAccelerometerData函数，它将在每次收到通知时被调用。事件处理程序接收一个事件对象，将附加到事件对象目标值的ArrayBuffer中。</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%879.png" alt=""></p>
+<h2 id="二，实验现象"><a href="#二，实验现象" class="headerlink" title="二，实验现象"></a>二，实验现象</h2><h3 id="Step1：浏览器现象"><a href="#Step1：浏览器现象" class="headerlink" title="Step1：浏览器现象"></a>Step1：浏览器现象</h3><h3 id="在浏览器中重新加载程序并进行测试。结果应该是这样的"><a href="#在浏览器中重新加载程序并进行测试。结果应该是这样的" class="headerlink" title="在浏览器中重新加载程序并进行测试。结果应该是这样的:"></a>在浏览器中重新加载程序并进行测试。结果应该是这样的:</h3><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%877.png" alt=""></p>
+<h3 id="Step2：开发板现象"><a href="#Step2：开发板现象" class="headerlink" title="Step2：开发板现象"></a>Step2：开发板现象</h3><p>通过点击按钮，该现象与MicroBit蓝牙设备进行读写特性（三）现象一致。</p>
 	
 		</div>
 		
@@ -337,12 +337,8 @@
 	<span>
 		<a id="totop-post-page">返回顶部</a>
 		
-			<a href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="博客心得" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk" rel="next">
+			<a href="/2020/06/22/title-2/" title="读写特性" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -360,78 +356,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">
-								Hexo主题与Gitalk			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 23日, 2020				
-							</p>
-							<p class="relate-post-content">
-								Hexo主题配置一、我们现在的博客是初始化的主题，所以我们要给Hexo换上新装。Hexo主题在官网有很多，大家可以登录查看官网链接。
-有自己中意的主题以后，前往作者的Github,点击：“clone or download”，把文件夹...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo主题与Gitalk"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" title="Hexo本地搭建">
-								Hexo本地搭建			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 19日, 2020				
-							</p>
-							<p class="relate-post-content">
-								本博主第一篇文章，主要介绍：为何使用hexo。如何进行hexo本地的搭建以及遇到的问题，解决方案。
-为何使用Hexo目前网络有形形色色的博客，我们在这些平台的注册博客，发表文章，如果后来平台消失，我们发表的宝贵文章，也随之消失。
-我也...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" title="Hexo本地搭建">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo本地搭建"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/06/23/title-3/" title="启用通知">
-								启用通知			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								六月 23日, 2020				
-							</p>
-							<p class="relate-post-content">
-								一，要添加的代码内容和相关的解析step1:用户界面状态
-2.添加函数setNotificationsStatus(status)，将通知订阅的状态传进来，将该状态赋给notifications_enabled。
-
-3.有这个setN...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/06/23/title-3/" title="启用通知">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="启用通知"/>
-							</a>
-						</div>
-					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -522,6 +446,78 @@ title: 博客date: 2020-05-27 19:28:43tags:—Hexo（官方网站）是一个快
 							<a href="/2020/05/27/%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="博客心得">				
 								
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="博客心得"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github">
+								Hexo上传至Github			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 23日, 2020				
+							</p>
+							<p class="relate-post-content">
+								准备工作我们要将自己的博客上传至Github,首先我们需要将去注册我们GIithub账户。
+
+注册Github：右上角的sign in是登录，sign up是注册。
+新建仓库(Repository):点击create reposito...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/05/23/Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3Github/" title="Hexo上传至Github">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo上传至Github"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">
+								Hexo主题与Gitalk			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 23日, 2020				
+							</p>
+							<p class="relate-post-content">
+								Hexo主题配置一、我们现在的博客是初始化的主题，所以我们要给Hexo换上新装。Hexo主题在官网有很多，大家可以登录查看官网链接。
+有自己中意的主题以后，前往作者的Github,点击：“clone or download”，把文件夹...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/05/23/Hexo%E4%B8%BB%E9%A2%98%E4%B8%8EGitalk/" title="Hexo主题与Gitalk">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo主题与Gitalk"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" title="Hexo本地搭建">
+								Hexo本地搭建			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 19日, 2020				
+							</p>
+							<p class="relate-post-content">
+								本博主第一篇文章，主要介绍：为何使用hexo。如何进行hexo本地的搭建以及遇到的问题，解决方案。
+为何使用Hexo目前网络有形形色色的博客，我们在这些平台的注册博客，发表文章，如果后来平台消失，我们发表的宝贵文章，也随之消失。
+我也...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/05/19/Hexo%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" title="Hexo本地搭建">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Hexo本地搭建"/>
 							</a>
 						</div>
 					</li>												
