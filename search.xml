@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>矩阵控制</title>
+      <link href="/2020/06/24/title-5/"/>
+      <url>/2020/06/24/title-5/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Step1：添加代码"><a href="#Step1：添加代码" class="headerlink" title="Step1：添加代码"></a>Step1：添加代码</h3><p>1.首先添加25个按钮，进而控制小灯的亮灭</p><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200624112823.png" alt=""></p><p>2.每个按钮按下都会调用函数E（）然后将每个小灯位置值赋给i，j最后调用函数Eve（）完成控制。</p><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200624112828.png" alt=""></p><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200624112831.png" alt=""></p><h3 id="Step2：实验现象"><a href="#Step2：实验现象" class="headerlink" title="Step2：实验现象"></a>Step2：实验现象</h3><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200624112819.png" alt=""></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 开发板 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一行LED</title>
       <link href="/2020/06/24/title-4/"/>
       <url>/2020/06/24/title-4/</url>
