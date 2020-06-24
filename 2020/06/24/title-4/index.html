@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      启用通知 | scl
+      一行LED | scl
     
   </title>
   <meta name="author" content="ccit18081430212">
@@ -89,7 +89,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「启用通知」
+			「一行LED」
 		
 	</p>
 
@@ -239,8 +239,8 @@
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2020/06/23/title-3/" itemprop="url">
-		启用通知
+	<a href="/2020/06/24/title-4/" itemprop="url">
+		一行LED
 	</a>
 
 		</div>
@@ -256,9 +256,9 @@
 
 	更新于
 
-	<a href="/2020/06/23/title-3/" itemprop="url">
-		<time datetime="2020-06-23T04:09:07.000Z" itemprop="dateUpdated">
-	  		2020-06-23
+	<a href="/2020/06/24/title-4/" itemprop="url">
+		<time datetime="2020-06-24T03:10:20.000Z" itemprop="dateUpdated">
+	  		2020-06-24
 	  </time>
 	</a> 
 
@@ -279,7 +279,7 @@
 			
 
 	
-    <span class="leancloud_visitors" id="/2020/06/23/title-3/_visitors" data-url="/2020/06/23/title-3/" data-title="启用通知">
+    <span class="leancloud_visitors" id="/2020/06/24/title-4/_visitors" data-url="/2020/06/24/title-4/" data-title="一行LED">
        	<i class="icon-eye"></i>
        	热度
         
@@ -291,7 +291,7 @@
 
 
 	
-    <span class="leancloud_likes" id="/2020/06/23/title-3/_likes" data-url="/2020/06/23/title-3/" data-title="启用通知" rel="unlike">
+    <span class="leancloud_likes" id="/2020/06/24/title-4/_likes" data-url="/2020/06/24/title-4/" data-title="一行LED" rel="unlike">
         <i class="icon-heart"></i>
         喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -301,24 +301,20 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<h2 id="一，要添加的代码内容和相关的解析"><a href="#一，要添加的代码内容和相关的解析" class="headerlink" title="一，要添加的代码内容和相关的解析"></a>一，要添加的代码内容和相关的解析</h2><h3 id="step1-用户界面状态"><a href="#step1-用户界面状态" class="headerlink" title="step1:用户界面状态"></a>step1:用户界面状态</h3><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%871.png" alt=""></p>
-<p>2.添加函数setNotificationsStatus(status)，将通知订阅的状态传进来，将该状态赋给notifications_enabled。</p>
-<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%872.png" alt=""></p>
-<p>3.有这个setNotificationsStatus(status)函数，我们要进行调用，将其放入resetUI()函数中调用。</p>
-<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%873.png" alt=""></p>
-<h3 id="Step2-验证状态"><a href="#Step2-验证状态" class="headerlink" title="Step2:验证状态"></a>Step2:验证状态</h3><p>订阅和接收通知只能在我们与设备连接时执行。我们还需要检查连接的设备是否包含所要求的相关的服务和特征，然后我们才试图启用有关该特征的通知。因此，我们将在订阅加速计数据通知的代码中包含一些验证，就像我们在上一部分中读取和写入特征时所做的那样。添加的函数是toggleAccelerometerNotifications()</p>
-<p>内容如下：</p>
-<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%874.png" alt=""></p>
-<h3 id="Step3-启用和禁用通知"><a href="#Step3-启用和禁用通知" class="headerlink" title="Step3:启用和禁用通知"></a>Step3:启用和禁用通知</h3><p>通知也是有启用和禁用的，我们要么开始通知，要么取消订阅并停止它们，这取决于当前的订阅状态。所以我们要有以下判断</p>
-<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%875.png" alt=""></p>
-<h3 id="Step4-通知事件"><a href="#Step4-通知事件" class="headerlink" title="Step4:通知事件"></a>Step4:通知事件</h3><p>我们仍然需要一些代码来处理收到的通知。我们还需要在停止通知时做一些整理,所以在toggleAccelerometerNotifications()函数需要添加以下代码<img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%876.png" alt=""></p>
-<p>在toggleAccelerometerNotifications()函数中的位置如下：</p>
-<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%878.png" alt=""></p>
-<p>当接收到某个特征的通知时，将触发一个事件并附加该特征值。在更改中，我们所做的是注册一个函数来处理此事件。</p>
-<h3 id="Step5：处理通知"><a href="#Step5：处理通知" class="headerlink" title="Step5：处理通知"></a>Step5：处理通知</h3><p>我们的最后一个任务是添加onAccelerometerData函数，它将在每次收到通知时被调用。事件处理程序接收一个事件对象，将附加到事件对象目标值的ArrayBuffer中。</p>
-<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%879.png" alt=""></p>
-<h2 id="二，实验现象"><a href="#二，实验现象" class="headerlink" title="二，实验现象"></a>二，实验现象</h2><h3 id="Step1：浏览器现象"><a href="#Step1：浏览器现象" class="headerlink" title="Step1：浏览器现象"></a>Step1：浏览器现象</h3><h3 id="在浏览器中重新加载程序并进行测试。结果应该是这样的"><a href="#在浏览器中重新加载程序并进行测试。结果应该是这样的" class="headerlink" title="在浏览器中重新加载程序并进行测试。结果应该是这样的:"></a>在浏览器中重新加载程序并进行测试。结果应该是这样的:</h3><p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%877.png" alt=""></p>
-<h3 id="Step2：开发板现象"><a href="#Step2：开发板现象" class="headerlink" title="Step2：开发板现象"></a>Step2：开发板现象</h3><p>通过点击按钮，该现象与MicroBit蓝牙设备进行读写特性（三）现象一致。</p>
+			<h3 id="Step1：修改代码"><a href="#Step1：修改代码" class="headerlink" title="Step1：修改代码"></a>Step1：修改代码</h3><p>1.接着要修改HTML代码，在web添加按钮，总共有10个按钮：</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200624111837.png" alt=""></p>
+<p>2.添加数组和变量</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200624111842.png" alt=""></p>
+<p>3.在这一过程中,大家只用添加4个函数，Row（）和Col（）函数分别是控制行列，而F（C），G（L）函数是将上面两个函数进行调用，当网页按钮按下时，调用F(C)，G(L)函数，这里的C和L是由于网页按下按钮的不同被赋于了不同的值，从而将值赋给函数进行if判断，数组led_Row和led_Col是指在进行行或列控制时，如果有相应的行按钮或列按钮按下则被赋于1小灯亮，若没有行按钮按下则是0灭，进而控制LED灯行列的亮灭。</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200624111845.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%8720200624111849.png" alt=""></p>
+<h3 id="Step2：实验现象"><a href="#Step2：实验现象" class="headerlink" title="Step2：实验现象"></a>Step2：实验现象</h3><p>1.网页浏览器端的现象：</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%87000.png" alt=""></p>
+<p>2.开发板连接成功现象：</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%87111.png" alt=""></p>
+<p>3.按下网页端ControlRow02 LEDs和ControlCol2 LEDs按钮，开发会在每行每列发生变化。</p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%87222.png" alt=""></p>
+<p><img src="/ccit18081430212/QQ%E5%9B%BE%E7%89%87333.png" alt=""></p>
 	
 		</div>
 		
@@ -337,12 +333,8 @@
 	<span>
 		<a id="totop-post-page">返回顶部</a>
 		
-			<a href="/2020/06/24/title-4/" title="一行LED" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2020/06/22/title-2/" title="读写特性" rel="next">
+			<a href="/2020/06/23/title-3/" title="启用通知" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -363,26 +355,25 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/06/24/title-4/" title="一行LED">
-								一行LED			
+							<a class="relate-post-title" href="/2020/06/23/title-3/" title="启用通知">
+								启用通知			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
-								六月 24日, 2020				
+								六月 23日, 2020				
 							</p>
 							<p class="relate-post-content">
-								Step1：修改代码1.接着要修改HTML代码，在web添加按钮，总共有10个按钮：
+								一，要添加的代码内容和相关的解析step1:用户界面状态
+2.添加函数setNotificationsStatus(status)，将通知订阅的状态传进来，将该状态赋给notifications_enabled。
 
-2.添加数组和变量
-
-3.在这一过程中,大家只用添加4个函数，Row（）和Col（）函数分别是控制行列，而F（C），G（L）函数是将上面两个函数进...
+3.有这个setN...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/2020/06/24/title-4/" title="一行LED">				
+							<a href="/2020/06/23/title-3/" title="启用通知">				
 								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="一行LED"/>
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="启用通知"/>
 							</a>
 						</div>
 					</li>												
